@@ -17,14 +17,14 @@
         </div>
       </div>
     </div>
-    <div class="shopcart-list border-1px" v-show="listShow" transition="fold">
+    <div class="shopcart-list" v-show="listShow" transition="fold">
       <div class="list-header">
         <h1 class="title">购物车</h1>
         <span class="empty" @click="empty">清空</span>
       </div>
       <div class="list-content" v-el:list-content>
         <ul>
-          <li class="food border-1px" v-for="food in selectFoods">
+          <li class="food" v-for="food in selectFoods">
             <span class="name">{{food.name}}</span>
             <div class="price">
               <span>￥{{food.price*food.count}}</span>
@@ -245,16 +245,16 @@
       z-index: -1
       width: 100%
       &.fold-transition
-        transition: all 0.5s linear
+        transition: all 0.5s
         transform: translate3d(0, -100%, 0)
       &.fold-enter, &.fold-leave
         transform: translate3d(0, 0, 0)
       .list-header
-        background: #f3f5f7
-        padding: 0 18px
         height: 40px
         line-height: 40px
-        border-1px(rgba(7, 17, 27, 0.1))
+        padding: 0 18px
+        background: #f3f5f7
+        border-bottom: 1px solid rgba(7, 17, 27, 0.1)
         .title
           float: left
           font-size: 14px
@@ -263,10 +263,11 @@
           float: right
           font-size: 12px
           color: rgb(0, 160, 220)
+
       .list-content
         padding: 0 18px
-        max-height: 195px
-        overflow: auto
+        max-height: 217px
+        overflow: hidden
         background: #fff
         .food
           position: relative
@@ -289,10 +290,6 @@
             position: absolute
             right: 0
             bottom: 6px
-
-
-
-
 
   .list-mask
     position: fixed
