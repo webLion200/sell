@@ -235,7 +235,7 @@
           .star-wrapper
             margin-top: 18px
             padding: 2px 0
-            text-align center
+            text-align: center
           .title
             display: flex
             width: 80%
